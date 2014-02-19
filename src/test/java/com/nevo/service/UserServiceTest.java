@@ -1,4 +1,4 @@
-package com.nevo.service.test;
+package com.nevo.service;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import com.nevo.domain.User;
 import com.nevo.repository.IUserRepository;
 import com.nevo.service.UserService;
 
-public class UserServiceTests {
+public class UserServiceTest {
 	
 	private UserService objectUnderTest = new UserService();
 	
