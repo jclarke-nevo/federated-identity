@@ -1,4 +1,4 @@
-package com.nevo.controller.test;
+package com.nevo.controller;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import com.nevo.domain.User;
 import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
 
-public class UserControllerTests {
+public class UserControllerTest {
 	private UserController objectUnderTest = new UserController();
 	
 	@Test
