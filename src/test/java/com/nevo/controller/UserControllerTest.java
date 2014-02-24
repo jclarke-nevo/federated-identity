@@ -38,6 +38,17 @@ public class UserControllerTest {
 				result.getPassword());		
 	}
 	
+	@Test
+	public void getAllUsers_should_return_entire_repository()
+	{
+		// arrange 
+		
+		// act
+		
+		// assert
+		Assert.fail("this test has not been implemented");		
+	}
+	
 	
 	private User createTestUser_Alpha(){
 		User result = new User();
