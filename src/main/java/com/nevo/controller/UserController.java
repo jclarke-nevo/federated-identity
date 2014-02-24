@@ -15,6 +15,12 @@ import com.nevo.domain.User;
 import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
 
+/**
+ * UserController handles non-API requests (rendering HTML results)
+ * 
+ * @author poo
+ *
+ */
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -26,7 +32,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView getAllUsers(){
+	public ModelAndView listAllUsers(){
 		List<User> users = userService.findAll();
 		List<UserVm> userModels = new ArrayList<UserVm>();
 		for (User user : users) {
@@ -35,16 +41,4 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("/users/index", "UserList", userModels);
 		return mv;
 	}
-
-	@RequestMapping(value="/{username}", method=RequestMethod.GET)
-	public @ResponseBody UserVm getUser(@PathVariable String username) {
-		User user = userService.findByUsername(username);
-		
-		if (null != user) {
-			return new UserVm(user);
-		} else {
-			return null;
-		}
-	}
-	
 }

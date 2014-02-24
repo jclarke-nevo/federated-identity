@@ -9,8 +9,8 @@ import com.nevo.domain.User;
 import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
 
-public class UserControllerTest {
-	private UserController objectUnderTest = new UserController();
+public class UserApiControllerTest {
+	private UserApiController objectUnderTest = new UserApiController();
 	
 	@Test
 	public void getUser_should_return_viewModel_matching_service_result(){
