@@ -9,8 +9,8 @@ import com.nevo.domain.User;
 import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
 
-public class UserControllerTest {
-	private UserController objectUnderTest = new UserController();
+public class UserApiControllerTest {
+	private UserApiController objectUnderTest = new UserApiController();
 	
 	@Test
 	public void getUser_should_return_viewModel_matching_service_result(){
@@ -36,22 +36,6 @@ public class UserControllerTest {
 		Assert.assertEquals("password values do not match", 
 				expectedUser.getPassword(), 
 				result.getPassword());		
-	}
-	
-	@Test
-	public void testThatFails(){
-		Assert.fail("I should never succeed");
-	}
-	
-	@Test
-	public void getAllUsers_should_return_entire_repository()
-	{
-		// arrange 
-		
-		// act
-		
-		// assert
-		Assert.fail("this test has not been implemented");		
 	}
 	
 	
