@@ -38,6 +38,10 @@ public class UserControllerTest {
 				result.getPassword());		
 	}
 	
+	@Test
+	public void testThatFails(){
+		Assert.fail("I should never succeed");
+	}
 	
 	private User createTestUser_Alpha(){
 		User result = new User();
