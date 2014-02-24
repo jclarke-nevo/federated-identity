@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.nevo.domain.User;
@@ -21,8 +22,8 @@ import com.nevo.viewModel.UserVm;
  * @author poo
  *
  */
-@Controller
-@RequestMapping("/users/api")
+@RestController
+@RequestMapping("/api/users")
 public class UserApiController {
 
 	@Autowired
@@ -37,7 +38,7 @@ public class UserApiController {
 	}
 
 	@RequestMapping(value="/{username}", method=RequestMethod.GET)
-	public @ResponseBody UserVm getUser(@PathVariable String username) {
+	public UserVm getUser(@PathVariable String username) {
 		User user = userService.findByUsername(username);
 		
 		if (null != user) {
