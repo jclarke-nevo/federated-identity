@@ -18,7 +18,7 @@ import com.nevo.viewModel.UserVm;
 /**
  * UserController handles non-API requests (rendering HTML results)
  * 
- * @author poo
+ * @author John C
  *
  */
 @Controller
