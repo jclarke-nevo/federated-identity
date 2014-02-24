@@ -1,5 +1,6 @@
 package com.nevo.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,10 @@ public class UserService implements IUserService {
 	
 	public User findByUsername(String username) {
 		return userRepository.findByUsername(username);
+	}
+	
+	public List<User> findAll() {
+		return userRepository.findAll();
 	}
 	
 	public User create(User user)

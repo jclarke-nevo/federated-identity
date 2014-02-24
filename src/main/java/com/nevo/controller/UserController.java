@@ -1,11 +1,15 @@
 package com.nevo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.nevo.domain.User;
 import com.nevo.service.IUserService;
@@ -22,8 +26,14 @@ public class UserController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String getAllUsers(){
-		return "/users/index";
+	public ModelAndView getAllUsers(){
+		List<User> users = userService.findAll();
+		List<UserVm> userModels = new ArrayList<UserVm>();
+		for (User user : users) {
+			userModels.add(new UserVm(user));
+		}
+		ModelAndView mv = new ModelAndView("/users/index", "UserList", userModels);
+		return mv;
 	}
 
 	@RequestMapping(value="/{username}", method=RequestMethod.GET)
