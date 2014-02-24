@@ -23,7 +23,7 @@ public class UserController {
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String getAllUsers(){
-		return "/users/index";
+		return "/users/index/foobar".toString();
 	}
 
 	@RequestMapping(value="/{username}", method=RequestMethod.GET)
@@ -36,4 +36,5 @@ public class UserController {
 			return null;
 		}
 	}
+	
 }
