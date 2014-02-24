@@ -15,6 +15,10 @@ import com.nevo.domain.User;
 import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
 
+/**
+ * @author Lucas
+ *
+ */
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -36,6 +40,10 @@ public class UserController {
 		return mv;
 	}
 
+	
+	/**
+	 * Returns a user for a given user name
+	 */
 	@RequestMapping(value="/{username}", method=RequestMethod.GET)
 	public @ResponseBody UserVm getUser(@PathVariable String username) {
 		User user = userService.findByUsername(username);
@@ -46,5 +54,4 @@ public class UserController {
 			return null;
 		}
 	}
-	
 }
