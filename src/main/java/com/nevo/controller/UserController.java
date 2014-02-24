@@ -16,7 +16,7 @@ import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
 
 /**
- * @author Lucas
+ * @author John C
  *
  */
 @Controller
