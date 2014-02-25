@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.nevo.controller.UserController;
 import com.nevo.domain.User;
 import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
