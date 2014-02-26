@@ -1,5 +1,7 @@
 package com.nevo.controller;
 
+import java.util.UUID;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -40,6 +42,7 @@ public class UserApiControllerTest {
 	
 	private User createTestUser_Alpha(){
 		User result = new User();
+		result.setId(UUID.randomUUID().toString());
 		result.setUsername("TestUserAlpha");
 		result.setPassword("TestUserAlpha_Password");
 		

@@ -1,7 +1,10 @@
 package com.nevo.service;
 
+import java.util.UUID;
+
 import org.junit.Assert;
 import org.junit.Test;
+
 import static org.mockito.Mockito.*;
 
 import com.nevo.domain.User;
@@ -88,6 +91,7 @@ public class UserServiceTest {
 	
 	private User createTestUser_Alpha(){
 		User result = new User();
+		result.setId(UUID.randomUUID().toString());
 		result.setUsername("TestUserAlpha");
 		result.setPassword("TestUserAlpha_Password");
 		

@@ -1,7 +1,6 @@
 package com.nevo.service;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +18,7 @@ public class UserService implements IUserService {
 	}
 	
 	public User findById(String id) {
-		return userRepository.findOne("");
+		return userRepository.findById(id);
 	}
 	
 	
@@ -32,9 +31,7 @@ public class UserService implements IUserService {
 	}
 	
 	public User create(User user)
-	{
-		user.setId(UUID.randomUUID().toString());
-		
+	{	
 		return userRepository.save(user);
 	}
 	

@@ -7,5 +7,7 @@ import com.nevo.domain.User;
 public interface IUserRepository extends MongoRepository<User, String> {
 
 	public abstract User findByUsername(String username);
+	
+	public User findById(String id);
 
 }

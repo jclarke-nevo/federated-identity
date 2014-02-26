@@ -5,6 +5,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
 public class User {
+	
+	public User(){}
+	
+	public User( String username, String password) {
+		this.password = password;
+		this.username = username;
+	}
 
 	@Id
 	private String id;

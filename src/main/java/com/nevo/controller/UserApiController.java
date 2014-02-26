@@ -43,4 +43,25 @@ public class UserApiController {
 			return null;
 		}
 	}
+	
+	@RequestMapping(value="/id/{userid}", method=RequestMethod.GET)
+	public UserVm getUserById(@PathVariable String userid) {
+		
+		User user = userService.findById(userid);
+		
+		if (null != user) {
+			return new UserVm(user);
+		} else {
+			return null;
+		}
+	}
+	
+	@RequestMapping(value="/create/{username}/{password}", method=RequestMethod.POST)
+	public UserVm createUser(@PathVariable String username, @PathVariable String password) {
+				
+		User user = userService.create(new User(username, password));
+		
+		return getUserById(user.getId());
+
+	}
 }
