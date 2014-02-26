@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nevo.domain.RESTOperationStatus;
 import com.nevo.domain.User;
 import com.nevo.service.IUserService;
 import com.nevo.viewModel.UserVm;
@@ -63,5 +64,21 @@ public class UserApiController {
 		
 		return getUserById(user.getId());
 
+	}
+	
+	@RequestMapping(value="/delete/{userid}", method=RequestMethod.DELETE)
+	public RESTOperationStatus deleteUser(@PathVariable String userid) {
+		
+		boolean success = true;
+		String message = "User deleted successfully: " + userid;
+		
+		try {
+			userService.delete(userid);
+		} catch (Exception e) {
+			success = false;
+			message = "Could not delete user: " + userid + ". Exception: "+ e.getClass().getName() + ": " + e.getMessage();
+		}
+		
+		return new RESTOperationStatus(success, message);
 	}
 }

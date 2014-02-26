@@ -14,4 +14,6 @@ public interface IUserService {
 
 	public User create(User user);
 
+	public abstract void delete(String userId);
+
 }
