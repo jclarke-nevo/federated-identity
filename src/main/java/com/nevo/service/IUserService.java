@@ -2,6 +2,7 @@ package com.nevo.service;
 
 import java.util.List;
 
+import com.nevo.domain.AlternateId;
 import com.nevo.domain.User;
 
 public interface IUserService {
@@ -15,5 +16,7 @@ public interface IUserService {
 	public User create(User user);
 
 	public abstract void delete(String userId);
+	
+	public void addAlternateId(String userId, AlternateId alternateId);
 
 }

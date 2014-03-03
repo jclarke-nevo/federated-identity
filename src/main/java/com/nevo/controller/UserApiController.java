@@ -3,11 +3,15 @@ package com.nevo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nevo.domain.AlternateId;
 import com.nevo.domain.RESTOperationStatus;
 import com.nevo.domain.User;
 import com.nevo.service.IUserService;
@@ -81,4 +85,19 @@ public class UserApiController {
 		
 		return new RESTOperationStatus(success, message);
 	}
+
+	@RequestMapping(value="/id/{userid}/addAlternateId", method=RequestMethod.POST)
+	public RESTOperationStatus addAlternateId(@PathVariable String userid, @RequestBody AlternateId alternateId) {
+		boolean success = true;
+		String message = "";
+		try {
+			userService.addAlternateId(userid, alternateId);
+		} catch (Exception e) {
+			success = false;
+			message = "Could not add AlternateId: " + userid + ". Exception: "+ e.getClass().getName() + ": " + e.getMessage();
+		}
+		return new RESTOperationStatus(success, message);
+	}
+	
+
 }

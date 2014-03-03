@@ -1,5 +1,7 @@
 package com.nevo.domain;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -44,5 +46,13 @@ public class User {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+	
+	private List<AlternateId> alternateIds;
+	public List<AlternateId> getAlternateIds() {
+		return alternateIds;
+	}
+	public void setAlternateIds(List<AlternateId>alternateIds) {
+		this.alternateIds = alternateIds;
 	}
 }
