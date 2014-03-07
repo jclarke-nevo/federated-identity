@@ -21,6 +21,10 @@
 </style>
 </head>
 <body>
+	<c:if test="${IdToken != null}">
+		<h1>Received token:</h1>
+		<textarea rows="4" cols="80">${IdToken}</textarea>
+	</c:if>
 	<h1>All Users List</h1>
 	<table>
 	<tr>
